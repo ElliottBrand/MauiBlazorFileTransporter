@@ -1,0 +1,1 @@
+﻿This 'Maui' Share Station is separate from the other Share Station project because it makes sense to use this project for MAUI specific classes, services, helpers, etc. that will never be used in the general WebAssembly app, so they don't have to be included in your Blazor WebAssembly deployment.

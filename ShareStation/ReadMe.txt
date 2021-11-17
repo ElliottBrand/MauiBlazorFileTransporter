@@ -1,0 +1,2 @@
+﻿Share Station is a project that holds services, helpers, etc. that you want to use in all projects. 
+Keep in mind that anything in this project gets uploaded to the client or native app and is also subject to reverse engineering, so never put anything sensitive in here (keys, secrets, etc...).

@@ -1,0 +1,39 @@
+﻿@inject INativeAppState nativeAppState
+@implements IDisposable
+
+<CascadingValue Name="PickerFiles" Value="pickerFiles">
+    @* This value may need adjusted if the app is being used for more than iOS, Android, and Windows *@
+    <CascadingValue Name="IsNativeApp" Value="DeviceInfo.Platform == DevicePlatform.iOS || DeviceInfo.Platform == DevicePlatform.Android ? true : false">
+        <SharedComponents.App />
+    </CascadingValue>
+</CascadingValue>
+
+@code {
+    public List<PickerMediaModel> pickerFiles;
+
+    protected override void OnInitialized()
+    {
+        nativeAppState.OnPickFiles += PickFiles;
+    }
+
+    public void Dispose()
+    {
+        nativeAppState.OnPickFiles -= PickFiles;
+    }
+
+    async void PickFiles(object sender, EventArgs args)
+    {
+        try
+        {
+            pickerFiles = await MauiShareStation.Utilities.FileSeeker.PickFilesAsync();
+            StateHasChanged();
+            nativeAppState.NotifyFilesPicked();
+        }
+        catch (Exception ex)
+        {
+            // You should handle display the error in a modal or in the UI somehow.
+            // This general project is just focused on showing a way to get images with FilePicker.
+            Console.WriteLine(ex.Message);
+        }
+    }
+}

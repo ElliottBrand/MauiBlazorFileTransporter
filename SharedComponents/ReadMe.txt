@@ -1,0 +1,1 @@
+﻿Placing your Blazor components in a Shared Components project allows you to hold them in one location and just reference them from other projects (i.e. Blazor WebAssembly and Native Apps).

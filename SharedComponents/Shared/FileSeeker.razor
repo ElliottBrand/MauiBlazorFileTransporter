@@ -1,0 +1,67 @@
+﻿@inject INativeAppState nativeAppState
+@implements IDisposable
+
+<div class="py-2">
+    @if(IsNativeApp)
+    {
+        <button @onclick="() => nativeAppState.PickFiles()" class="btn btn-primary">Browse Files</button>
+    }
+    else 
+    {
+        <InputFile class="btn btn-primary" OnChange="ImageFileChange" multiple />
+    }
+</div>
+
+<div class="mt-4 container">
+    <div class="row">
+        @foreach(var base64Image in base64Images)
+        {
+            <div class="col-6 col-md-4 p-1">
+                <img src="@base64Image" class="img-fluid" />
+            </div>
+        }
+    </div>
+</div>
+
+<button class="@(base64Images.Count == 0 ? "d-none" : "mt-2 btn btn-primary")" 
+    @onclick="() => base64Images.Clear()">Clear</button>
+
+@code {
+    [CascadingParameter(Name = "IsNativeApp")] public bool IsNativeApp { get; set; }
+    [CascadingParameter(Name = "PickerFiles")] public List<PickerMediaModel> PickerFiles { get; set; }
+    List<string> base64Images = new List<string>();
+
+    protected override void OnInitialized()
+    {
+        nativeAppState.OnFilesPicked += TransportFromFilePicker;
+    }
+
+    public void Dispose()
+    {
+        nativeAppState.OnFilesPicked -= TransportFromFilePicker;
+    }
+
+    async Task ImageFileChange(InputFileChangeEventArgs args)
+    {
+        foreach(var image in args.GetMultipleFiles())
+        {
+            byte[] buffer = new byte[image.Size];
+            using Stream stream = image.OpenReadStream();
+            await stream.ReadAsync(buffer);
+            base64Images.Add($"data:image/jpeg;base64,{Convert.ToBase64String(buffer)}");            
+        }
+        StateHasChanged();
+    }
+
+    void TransportFromFilePicker(object sender, EventArgs args)
+    {
+        if(PickerFiles != null && PickerFiles.Count > 0)
+        {
+            foreach (var file in PickerFiles)
+            {
+                base64Images.Add($"data:image/jpeg;base64,{Convert.ToBase64String(file.FileBytes)}");            
+            }
+            StateHasChanged();
+        }
+    }
+}

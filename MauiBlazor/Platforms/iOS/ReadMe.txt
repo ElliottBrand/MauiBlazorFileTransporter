@@ -1,0 +1,1 @@
+﻿I haven't tested this on iOS yet to see what may need adjusted.

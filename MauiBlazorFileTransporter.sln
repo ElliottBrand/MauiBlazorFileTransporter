@@ -1,0 +1,56 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31611.283
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiBlazor", "MauiBlazor\MauiBlazor.csproj", "{13DA6D79-6CA5-4F94-ACFA-05B74625F63E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedComponents", "SharedComponents\SharedComponents.csproj", "{346A620E-D1F7-4FAD-B647-B19B5865DD2A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorClient", "BlazorClient\BlazorClient.csproj", "{802F7E9C-88D5-405F-AF16-25446064E838}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{CED51A8C-5DE2-4727-86C4-209E19509538}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareStation", "ShareStation\ShareStation.csproj", "{E6C9CE1F-483E-4806-9826-EAB0BBC65332}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiShareStation", "MauiShareStation\MauiShareStation.csproj", "{69160DF4-2F88-45C0-B6D7-CE341AA7F0E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13DA6D79-6CA5-4F94-ACFA-05B74625F63E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13DA6D79-6CA5-4F94-ACFA-05B74625F63E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13DA6D79-6CA5-4F94-ACFA-05B74625F63E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{13DA6D79-6CA5-4F94-ACFA-05B74625F63E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13DA6D79-6CA5-4F94-ACFA-05B74625F63E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13DA6D79-6CA5-4F94-ACFA-05B74625F63E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{346A620E-D1F7-4FAD-B647-B19B5865DD2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{346A620E-D1F7-4FAD-B647-B19B5865DD2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{346A620E-D1F7-4FAD-B647-B19B5865DD2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{346A620E-D1F7-4FAD-B647-B19B5865DD2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{802F7E9C-88D5-405F-AF16-25446064E838}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{802F7E9C-88D5-405F-AF16-25446064E838}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{802F7E9C-88D5-405F-AF16-25446064E838}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{802F7E9C-88D5-405F-AF16-25446064E838}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CED51A8C-5DE2-4727-86C4-209E19509538}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CED51A8C-5DE2-4727-86C4-209E19509538}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CED51A8C-5DE2-4727-86C4-209E19509538}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CED51A8C-5DE2-4727-86C4-209E19509538}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6C9CE1F-483E-4806-9826-EAB0BBC65332}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6C9CE1F-483E-4806-9826-EAB0BBC65332}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6C9CE1F-483E-4806-9826-EAB0BBC65332}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6C9CE1F-483E-4806-9826-EAB0BBC65332}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69160DF4-2F88-45C0-B6D7-CE341AA7F0E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69160DF4-2F88-45C0-B6D7-CE341AA7F0E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69160DF4-2F88-45C0-B6D7-CE341AA7F0E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69160DF4-2F88-45C0-B6D7-CE341AA7F0E5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
+	EndGlobalSection
+EndGlobal

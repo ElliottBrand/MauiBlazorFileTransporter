@@ -1,1 +1,8 @@
-MauiBlazorFileTransporter
+## MAUI Blazor File Transporter
+This project is just a general example of a way to upload files in a MAUI Blazor project that also allows you to share the components in a WebAssembly project. The Android app requires special permissions to access the device, so I've used the File Picker that's provided in MAUI Essentials.
+
+- When running the project, just set BlazorClient as the startup project (right-click on the project and click "Set as Startup Project") to run it in Blazor WebAssembly and set the "MauiBlazor" project as the startup project in order to run a native app (Android, Windows, or iOS).
+- I've added a few extra projects to the solution that I could have done without for a simple solution, but I wanted to show a pattern that allows you to include files in a native app without having to include them in your WebAssembly app, since you won't want to include unneccessary code in your WebAssembly app and increase its size.
+- I chose to use App State to notify the MauiBlazor project when it needs to trigger the File Picker, so MAUI Essentials isn't required in the SharedComponents project. Then another event is fired when the files are picked, so the blazor component knows to retrieve them from the cascading parameter.
+- I also set a boolean cascading parameter to notify the shard components when the main project using them is a native app and when it's the WebAssembly app, so it can conditionally display the correct button/input to browse the images. The InputFile component works fine in the Windows app, so it doesn't need to use the File Picker.
+- Note: I haven't actually tested the iOS app yet, but I'm guessing it'll work fine. I have ran it in an Android emulator and on Windows and they work fine.
